@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   FeederFlex design system — "engineering control room"
+   Natural energy palette. Warm paper background, deep forest
+   green primary, restrained amber/orange for grid stress.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --ff-bg: #F4F1E8;
+  --ff-bg-alt: #EEF2EA;
+  --ff-surface: #FFFFFF;
+  --ff-surface-alt: #F7F8F3;
+  --ff-surface-sunken: #EAE6D9;
+
+  /* Ink */
+  --ff-ink: #1E2923;
+  --ff-ink-dim: #526057;
+  --ff-ink-faint: #8B9A8E;
+
+  /* Structure */
+  --ff-line: #DEDACB;
+  --ff-line-strong: #C8C2AE;
+
+  /* Brand */
+  --ff-primary: #1F5C45;
+  --ff-primary-bright: #2F7659;
+  --ff-secondary: #6E8F78;
+
+  /* Semantic */
+  --ff-energy: #8FBF7A;
+  --ff-warn: #D89B45;
+  --ff-critical: #C85C4A;
+  --ff-info: #4C7EA8;
+
+  /* Counterfactual (amber family, distinct from evidence green) */
+  --ff-counterfactual: #B8763A;
+
+  /* Extra section backgrounds -- alternating "scenes" down the landing page */
+  --ff-bg-mint: #EBF3E7;
+  --ff-bg-warm: #F1ECDE;
+
+  /* Elevation */
+  --ff-shadow-sm: 0 1px 2px rgba(30, 41, 35, 0.06), 0 1px 1px rgba(30, 41, 35, 0.04);
+  --ff-shadow-md: 0 4px 16px rgba(30, 41, 35, 0.08), 0 2px 6px rgba(30, 41, 35, 0.04);
+  --ff-shadow-lg: 0 12px 32px rgba(30, 41, 35, 0.12), 0 4px 12px rgba(30, 41, 35, 0.05);
+  --ff-shadow-inset: inset 0 1px 3px rgba(30, 41, 35, 0.12), inset 0 1px 1px rgba(30, 41, 35, 0.08);
+
+  --ff-font-display: 'Manrope', system-ui, sans-serif;
+  --ff-font-body: 'DM Sans', system-ui, sans-serif;
+  --ff-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  background: var(--ff-bg);
+  color: var(--ff-ink);
+  font-family: var(--ff-font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .ff-display {
+  font-family: var(--ff-font-display);
+  letter-spacing: -0.01em;
+}
+
+.ff-mono {
+  font-family: var(--ff-font-mono);
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* ---------- Material: solid surface (default cards/tables) ---------- */
+.ff-surface {
+  background: var(--ff-surface);
+  border: 1px solid var(--ff-line);
+  border-radius: 14px;
+  box-shadow: var(--ff-shadow-sm);
+}
+
+/* ---------- Material: layered analytical card ---------- */
+.ff-card {
+  background: var(--ff-surface);
+  border: 1px solid var(--ff-line);
+  border-radius: 16px;
+  box-shadow: var(--ff-shadow-md);
+  position: relative;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.ff-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(160deg, rgba(31, 92, 69, 0.14), transparent 40%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.ff-card:hover {
+  box-shadow: var(--ff-shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--ff-line-strong);
+}
+
+/* ---------- Material: glass panel (live status overlays) ---------- */
+.ff-glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--ff-shadow-lg);
+  border-radius: 16px;
+}
+
+/* ---------- Material: neumorphic control (playback, toggles) ---------- */
+.ff-neu {
+  background: var(--ff-surface-alt);
+  border-radius: 12px;
+  box-shadow:
+    3px 3px 8px rgba(30, 41, 35, 0.08),
+    -3px -3px 8px rgba(255, 255, 255, 0.9),
+    inset 0 0 0 1px rgba(30, 41, 35, 0.04);
+}
+.ff-neu-inset {
+  background: var(--ff-surface-sunken);
+  border-radius: 10px;
+  box-shadow: var(--ff-shadow-inset);
+}
+.ff-neu-btn {
+  background: var(--ff-surface-alt);
+  border-radius: 10px;
+  box-shadow:
+    2px 2px 5px rgba(30, 41, 35, 0.10),
+    -2px -2px 5px rgba(255, 255, 255, 0.85);
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+.ff-neu-btn:hover { box-shadow: 3px 3px 7px rgba(30,41,35,0.13), -3px -3px 7px rgba(255,255,255,0.9); }
+.ff-neu-btn:active {
+  box-shadow: var(--ff-shadow-inset);
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ---------- Sticky nav blur ---------- */
+.ff-nav-blur {
+  background: rgba(244, 241, 232, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ---------- Subtle contour / schematic backdrop ---------- */
+.ff-contours {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: repeating-radial-gradient(circle at 15% 20%, transparent 0, transparent 38px, var(--ff-primary) 39px, transparent 40px);
+  background-size: 340px 340px;
+  pointer-events: none;
+}
+
+.ff-scanlines {
+  background-image: repeating-linear-gradient(180deg, rgba(31,92,69,0.035) 0px, rgba(31,92,69,0.035) 1px, transparent 1px, transparent 3px);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--ff-bg); }
+::-webkit-scrollbar-thumb { background: var(--ff-line-strong); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ff-secondary); }
+
+/* ---------- Motion ---------- */
+@keyframes ff-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+.ff-pulse { animation: ff-pulse-dot 2.2s ease-in-out infinite; }
+
+@keyframes ff-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ff-fade-in { animation: ff-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes ff-flow {
+  to { stroke-dashoffset: -40; }
+}
+.ff-flow-line { stroke-dasharray: 4 6; animation: ff-flow 1.4s linear infinite; }
+
+@keyframes ff-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes ff-particle {
+  0% { offset-distance: 0%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+.ff-particle { animation: ff-particle 2.4s linear infinite; offset-rotate: 0deg; }
+
+/* ---------- Power-flow connector (feeder network diagram) ---------- */
+@keyframes ff-flow-bg-h { to { background-position: -20px 0; } }
+@keyframes ff-flow-bg-v { to { background-position: 0 -20px; } }
+.ff-flow-h {
+  background-image: repeating-linear-gradient(90deg, var(--ff-primary) 0 5px, transparent 5px 13px);
+  background-size: 200% 100%;
+  animation: ff-flow-bg-h 1s linear infinite;
+  opacity: 0.55;
+}
+.ff-flow-v {
+  background-image: repeating-linear-gradient(180deg, var(--ff-primary) 0 5px, transparent 5px 13px);
+  background-size: 100% 200%;
+  animation: ff-flow-bg-v 1s linear infinite;
+  opacity: 0.55;
+}
+
+/* ---------- Curved section separator ---------- */
+.ff-curve-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Focus visibility (accessibility) ---------- */
+:focus-visible {
+  outline: 2px solid var(--ff-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
