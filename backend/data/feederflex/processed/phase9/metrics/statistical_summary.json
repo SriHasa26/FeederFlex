@@ -1,0 +1,57 @@
+{
+  "peak_reduction_w": {
+    "mean": 2096.4734077453613,
+    "median": 1790.8745498657227,
+    "min": 1603.306640625,
+    "max": 3200.837890625,
+    "p25": 1603.306640625,
+    "p75": 2284.041316986084,
+    "n": 4
+  },
+  "evening_reduction_w": {
+    "mean": 62.181214057880425,
+    "median": 62.05629949984268,
+    "min": 0.0,
+    "max": 124.61225723183634,
+    "p25": 0.6175473876614888,
+    "p75": 123.61996617006162,
+    "n": 4
+  },
+  "total_curtailed_energy_wh": {
+    "mean": 546936.3527534688,
+    "median": 497022.905760888,
+    "min": 347188.1323776245,
+    "max": 846511.4671144746,
+    "p25": 396645.89510030113,
+    "p75": 647313.3634140557,
+    "n": 4
+  },
+  "total_unmet_energy_wh": {
+    "mean": 842230.8369911662,
+    "median": 869796.3602556449,
+    "min": 594622.0454604186,
+    "max": 1034708.5819929566,
+    "p25": 746295.4816075211,
+    "p75": 965731.7156392899,
+    "n": 4
+  },
+  "n_interventions_total": {
+    "mean": 4095.5,
+    "median": 4126.0,
+    "min": 1955.0,
+    "max": 6175.0,
+    "p25": 3111.5,
+    "p75": 5110.0,
+    "n": 4
+  },
+  "flexibility_utilization": {
+    "mean": 0.7519888613555624,
+    "median": 0.7575636197456765,
+    "min": 0.6384264014861879,
+    "max": 0.8544018044447088,
+    "p25": 0.6907950495038775,
+    "p75": 0.8187574315973614,
+    "n": 4
+  },
+  "_note": "Descriptive statistics over the 4 participation scenarios (n=4) of counterfactual_broad only -- NOT a statistical sample of independent real-world observations. The 100 synthetic households are a single synthetic population; no confidence interval or significance test is computed or implied anywhere in Phase 9."
+}

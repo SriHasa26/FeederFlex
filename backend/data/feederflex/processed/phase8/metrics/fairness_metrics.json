@@ -1,0 +1,55 @@
+{
+  "n_households_with_any_intervention": 85,
+  "intervention_count_distribution": {
+    "min": 69.0,
+    "p25": 69.0,
+    "median": 69.0,
+    "p75": 70.0,
+    "max": 150.0,
+    "mean": 72.6470588235294
+  },
+  "by_archetype": [
+    {
+      "archetype_id": "archetype_1_srh_mumbai",
+      "households": 53,
+      "total_interventions": 3704,
+      "total_energy_wh": 343644.077041626,
+      "mean_interventions_per_hh": 69.88679245283019
+    },
+    {
+      "archetype_id": "archetype_2_slum_mumbai",
+      "households": 32,
+      "total_interventions": 2471,
+      "total_energy_wh": 173137.20314810425,
+      "mean_interventions_per_hh": 77.21875
+    }
+  ],
+  "top_5_most_intervened_households": [
+    {
+      "household_id": "SLUM_0007",
+      "n_interventions": 150,
+      "total_selected_energy_wh": 8022.770157568157
+    },
+    {
+      "household_id": "SLUM_0012",
+      "n_interventions": 150,
+      "total_selected_energy_wh": 8034.719105474651
+    },
+    {
+      "household_id": "SLUM_0033",
+      "n_interventions": 150,
+      "total_selected_energy_wh": 8035.646570913494
+    },
+    {
+      "household_id": "SRH_0008",
+      "n_interventions": 102,
+      "total_selected_energy_wh": 77965.1474533081
+    },
+    {
+      "household_id": "SLUM_0002",
+      "n_interventions": 70,
+      "total_selected_energy_wh": 5160.966331481934
+    }
+  ],
+  "note": "Descriptive only. No equal-intervention target was imposed. The ranking mechanism's fairness penalty term reduces (but does not eliminate) repeated selection of the same households when power-equivalent alternatives exist -- it does not guarantee equal outcomes, and none was intended."
+}

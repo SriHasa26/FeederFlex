@@ -1,0 +1,31 @@
+{
+  "zero_baseline_flexibility": {
+    "requested_wh": 1335086.2840070312,
+    "available_wh": 0.0,
+    "delivered_wh": 0.0,
+    "unmet_wh": 1335086.2840070312
+  },
+  "insufficient_flexibility": {
+    "n_hours": 357,
+    "requested_wh": 958443.5691296875,
+    "delivered_wh": 363821.52366926894,
+    "unmet_wh": 594622.0454604186,
+    "max_single_hour_unmet_w": 7402.01168671875
+  },
+  "low_participation_30pct": {
+    "requested_wh": 1335086.2840070312,
+    "delivered_wh": 347188.1323776245,
+    "unmet_wh": 1034708.5819929566,
+    "insufficient_flexibility_hours": 467
+  },
+  "highest_single_hour_shortfall": {
+    "timestamp": "2013-06-19 07:00:00+05:30",
+    "requested_w": 10814.07489140625,
+    "delivered_w": 4773.847194671631,
+    "unmet_w": 6040.227696734619
+  },
+  "all_candidates_protected": {
+    "scenario": "baseline eligibility (any participation rate)",
+    "note": "100% of profiled candidate instance-hours are protected under baseline eligibility (Phase 8 check 8.29.06) -- there is no unprotected candidate pool to draw from at all, independent of participation or capacity scenario."
+  }
+}

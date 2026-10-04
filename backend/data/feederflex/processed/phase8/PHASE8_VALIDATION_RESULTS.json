@@ -1,0 +1,154 @@
+{
+  "summary": {
+    "n_checks": 24,
+    "n_passed": 24,
+    "n_failed": 0,
+    "all_passed": true
+  },
+  "checks": [
+    {
+      "id": "8.29.01",
+      "name": "Zero-flexibility (evidence-backed) baseline case",
+      "passed": true,
+      "detail": "(n_interventions=0, curtailed_wh=0.0)"
+    },
+    {
+      "id": "8.29.02",
+      "name": "Normal no-shortfall condition (assumed_nameplate_capacity: Phase 4C's plausibility-anchored transformer capacity)",
+      "passed": true,
+      "detail": "(1491/1491 hours NORMAL, 0 log rows)"
+    },
+    {
+      "id": "8.29.03",
+      "name": "Shortfall smaller than available flexibility (fully met)",
+      "passed": true,
+      "detail": "(152 hours, all unmet<=0)"
+    },
+    {
+      "id": "8.29.04",
+      "name": "Shortfall approximately equal to delivered flexibility (tight match, still met)",
+      "passed": true,
+      "detail": "(78 hours within 5% of exact match)"
+    },
+    {
+      "id": "8.29.05",
+      "name": "Shortfall larger than available flexibility (INSUFFICIENT_FLEXIBILITY)",
+      "passed": true,
+      "detail": "(357 hours, all unmet>0)"
+    },
+    {
+      "id": "8.29.06",
+      "name": "All candidates protected under baseline eligibility",
+      "passed": true,
+      "detail": "(100.0% protected)"
+    },
+    {
+      "id": "8.29.07",
+      "name": "Non-participating (opted-out) households never enter the eligible pool",
+      "passed": true,
+      "detail": "(15095 non-participating instance-hours confirmed excluded)"
+    },
+    {
+      "id": "8.29.08",
+      "name": "Currently-OFF instances never enter the eligible pool",
+      "passed": true,
+      "detail": "(0 off instance-hours in this data)"
+    },
+    {
+      "id": "8.29.09",
+      "name": "Minimum-runtime constraint blocks short-runtime candidates",
+      "passed": true,
+      "detail": "(0 selections with runtime_before < threshold)"
+    },
+    {
+      "id": "8.29.10",
+      "name": "Cooldown constraint blocks recently-restored candidates",
+      "passed": true,
+      "detail": "(0 selections with cooldown_before > 0)"
+    },
+    {
+      "id": "8.29.11",
+      "name": "Interruption-count limit never exceeded per appliance per day",
+      "passed": true,
+      "detail": "(max same-day selections for any appliance: 2, limit=2)"
+    },
+    {
+      "id": "8.29.12",
+      "name": "No single household dominates selection (fairness penalty functioning)",
+      "passed": true,
+      "detail": "(n_households=85, max=150, median=69.0)"
+    },
+    {
+      "id": "8.29.13",
+      "name": "AC never eligible under baseline (Rule 8 Never-Control preserved)",
+      "passed": true,
+      "detail": "(245 AC instance-hours, all ineligible)"
+    },
+    {
+      "id": "8.29.14",
+      "name": "Opt-out (participation) gate is absolute -- never bypassed by the controller",
+      "passed": true,
+      "detail": "(0 non-participating households ever selected, by construction of the static pool)"
+    },
+    {
+      "id": "8.29.15",
+      "name": "Staggered (voluntary) restoration never exceeds the batch size in any single hour",
+      "passed": true,
+      "detail": "(max voluntary restorations in one hour: 5, batch_size=5)"
+    },
+    {
+      "id": "8.29.15b",
+      "name": "Actual interruption duration never exceeds the maximum allowed duration (gap-closure)",
+      "passed": true,
+      "detail": "(n_interventions_restored=6175, max=2.0, mean=1.95, p95=2.0, limit=2, n_exceeding=0, max_excess=0.0)"
+    },
+    {
+      "id": "8.29.16",
+      "name": "controlled_load_w + delivered_flexibility_w == net_demand_w for every hour",
+      "passed": true,
+      "detail": "(max diff: 0.00e+00 W)"
+    },
+    {
+      "id": "8.29.16b",
+      "name": "delivered_flexibility_w never exceeds available_flexibility_w (gap-closure regression guard)",
+      "passed": true,
+      "detail": "(0 hours violating, of 1491, tol=0.01W)"
+    },
+    {
+      "id": "8.29.17",
+      "name": "No negative controlled load anywhere",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "8.29.18",
+      "name": "Controlled load never exceeds baseline load",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "8.29.19",
+      "name": "No constraint violations overall (protected/opt-out/runtime/cooldown/interruption)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "8.29.20",
+      "name": "Deterministic reproducibility (re-running the same scenario is bit-identical)",
+      "passed": true,
+      "detail": "(max diff: 0.0)"
+    },
+    {
+      "id": "8.29.21",
+      "name": "Raw data / Phase 4-7 outputs not modified (checksum re-verification)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "8.29.22",
+      "name": "Phase 7 validation results still green (re-read, not re-run)",
+      "passed": true,
+      "detail": "(21/21)"
+    }
+  ]
+}

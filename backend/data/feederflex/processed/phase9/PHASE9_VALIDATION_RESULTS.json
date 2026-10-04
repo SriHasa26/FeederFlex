@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "n_checks": 13,
+    "n_passed": 13,
+    "n_failed": 0,
+    "all_passed": true
+  },
+  "checks": [
+    {
+      "id": "9.26.01",
+      "name": "Phase 8 outputs unchanged (Phase 8's own validation still 24/24 green, re-read not re-run)",
+      "passed": true,
+      "detail": "({'n_checks': 24, 'n_passed': 24, 'n_failed': 0, 'all_passed': True})"
+    },
+    {
+      "id": "9.26.02",
+      "name": "Phase 8 corrected duration logic preserved (check 8.29.15b still passes)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "9.26.03",
+      "name": "Flexibility utilization <= 100% (Phase 9 independent recompute)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "9.26.04",
+      "name": "Zero baseline flexibility preserved at every participation rate",
+      "passed": true,
+      "detail": "([0.0, 0.0, 0.0, 0.0])"
+    },
+    {
+      "id": "9.26.05",
+      "name": "Counterfactual scenarios (Class B) stored separately from baseline (Class A)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "id": "9.26.06",
+      "name": "Capacity scenarios never combined into one statistical result",
+      "passed": true,
+      "detail": "(n=4, expected 4 participation rates of ONE capacity scenario)"
+    },
+    {
+      "id": "9.26.07",
+      "name": "No new assumptions introduced in Phase 9's own common.py",
+      "passed": true,
+      "detail": "(scanned for redefinition of Phase 7/8 constants: [])"
+    },
+    {
+      "id": "9.26.08",
+      "name": "All metrics reproducible (re-running Phase 9's own evaluation math is bit-identical)",
+      "passed": true,
+      "detail": "(diff=0.0)"
+    },
+    {
+      "id": "9.26.09",
+      "name": "No unsupported/real-grid/field-validation claims found in report text",
+      "passed": true,
+      "detail": "([])"
+    },
+    {
+      "id": "9.26.12",
+      "name": "Limitations audit complete (all required inherited items present)",
+      "passed": true,
+      "detail": "(missing: [])"
+    },
+    {
+      "id": "9.26.13",
+      "name": "Evidence classification matrix exists with >=14 numbered claim rows",
+      "passed": true,
+      "detail": "(found 14 rows)"
+    },
+    {
+      "id": "9.26.14",
+      "name": "All 12 required plots generated",
+      "passed": true,
+      "detail": "(12 PNGs found)"
+    },
+    {
+      "id": "9.26.15",
+      "name": "Raw data / Phase 4-8 outputs not modified (checksum re-verification)",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -4,11 +4,19 @@ FeederFlex backend -- configuration.
 The backend is READ-ONLY over the validated Phase 4-9 research pipeline. It never writes to
 phase3_data/, never re-runs any simulation, and never accepts a control command.
 """
+import os
 from pathlib import Path
 
 BACKEND_ROOT = Path(__file__).resolve().parents[2]
 REPO_ROOT = BACKEND_ROOT.parent
-PHASE3_DATA = REPO_ROOT / "phase3_data"
+
+# Deployment data bundle.
+# Override with FEEDERFLEX_DATA_DIR when running in another environment.
+DATA_ROOT = Path(
+    os.getenv("FEEDERFLEX_DATA_DIR", str(BACKEND_ROOT / "data" / "feederflex"))
+).resolve()
+
+PHASE3_DATA = DATA_ROOT
 
 PHASE4B_DIR = PHASE3_DATA / "processed" / "phase4b"
 PHASE4C_DIR = PHASE3_DATA / "processed" / "phase4c"
@@ -37,7 +45,18 @@ APP_VERSION = "1.0.0"
 # avoid colliding with an unrelated pre-existing dev server on the default Vite port (5173) on
 # shared dev machines. Both ports are kept allowed for compatibility with any environment where
 # 5173 is actually free.
+DEFAULT_CORS_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5199",
+    "http://127.0.0.1:5199",
+]
+
 CORS_ORIGINS = [
-    "http://localhost:5173", "http://127.0.0.1:5173",
-    "http://localhost:5199", "http://127.0.0.1:5199",
+    origin.strip()
+    for origin in os.getenv(
+        "FEEDERFLEX_CORS_ORIGINS",
+        ",".join(DEFAULT_CORS_ORIGINS),
+    ).split(",")
+    if origin.strip()
 ]

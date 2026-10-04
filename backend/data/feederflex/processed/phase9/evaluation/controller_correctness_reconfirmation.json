@@ -1,0 +1,25 @@
+{
+  "phase8_validation_summary": {
+    "n_checks": 24,
+    "n_passed": 24,
+    "n_failed": 0,
+    "all_passed": true
+  },
+  "guarantee_checks": {
+    "protected_load_violations_0": true,
+    "opt_out_violations_0": true,
+    "runtime_violations_0": true,
+    "cooldown_violations_0": true,
+    "interruption_limit_violations_0": true,
+    "duration_limit_violations_0": true,
+    "controlled_load_never_exceeds_baseline": true,
+    "reproducibility": true
+  },
+  "phase9_independent_recompute": {
+    "utilization_over_100pct": 0,
+    "negative_delivered": 0,
+    "negative_available": 0,
+    "controlled_exceeds_baseline": 0
+  },
+  "all_guarantees_hold": true
+}

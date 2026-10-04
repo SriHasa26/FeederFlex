@@ -1,0 +1,21 @@
+{
+  "authoritative_unit": "modeled hourly simulation steps (NOT calendar time -- see PHASE8_DURATION_GAP_CLOSURE.md; the underlying dataset has real multi-week gaps that make calendar-time duration meaningless)",
+  "canonical_timestep_hours": 1,
+  "equivalent_clock_time_note": "Because the canonical timestep is exactly 1 hour, a duration of N simulation steps is numerically equal to N hours of WALL-CLOCK time WITHIN a contiguous run of modeled hours (no dataset gap crossed). This equivalence is stated explicitly here per Section 9.8's instruction; it does not change the authoritative step-based unit.",
+  "max_allowed_duration_steps": 2,
+  "n_restorations": 6175,
+  "n_by_reason": {
+    "RESTORED_DEADLINE_FORCED": 5858,
+    "RESTORED_STAGGERED": 317
+  },
+  "duration_min": 1.0,
+  "duration_p25": 2.0,
+  "duration_median": 2.0,
+  "duration_p75": 2.0,
+  "duration_mean": 1.948663967611336,
+  "duration_max": 2.0,
+  "n_exceeding_max_duration": 0,
+  "total_curtailed_energy_wh": 846511.4671144746,
+  "average_curtailed_power_w_when_active": 2391.2753308318493,
+  "maximum_instantaneous_curtailment_w": 6469.018779754639
+}
